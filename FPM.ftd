@@ -2,7 +2,16 @@
 
 -- fpm.package: fifthtry.github.io/images
 zip: github.com/fifthtry/images/archive/refs/heads/main.zip
+base: https://raw.githubusercontent.com/fifthtry/images/main
 
--- fpm.dependency: fifthtry.github.io/doc-site as ds
+-- fpm.dependency: fifthtry.github.io/package-doc as pd
+-- fpm.dependency: fifthtry.github.io/inter
 
--- fpm.auto-import: ds
+
+-- fpm.auto-import: pd
+-- fpm.auto-import: fpm
+-- fpm.auto-import: pd/typography as tf
+-- fpm.auto-import: pd/code-block as cb
+-- fpm.auto-import: pd/forest-theme as ft
+-- fpm.auto-import: fpm
+-- fpm.auto-import: fifthtry.github.io/images/FPM/config
