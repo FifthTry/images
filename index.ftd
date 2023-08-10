@@ -1,43 +1,36 @@
--- import: fifthtry.github.io/images/assets
--- import: fifthtry.github.io/package-doc/doc as pd
-
--- boolean is-mobile: false
-
--- is-mobile: true
-if: $ftd.device == mobile
+-- import: fastn-community.github.io/site-doc
+-- import: fastn-community.github.io/code-block as cb
+-- import: fastn-community.github.io/typography as tf
+export: markdown,h0,h1,h2,h3
+exposing: markdown, h3
 
 
--- ftd.column:
-width: fill
-padding-horizontal: 50
-padding-vertical: 20
-padding-horizontal if $is-mobile: 20
-background-color: $fpm.color.main.background.base
+-- site-doc.doc-home: Image Component
+site-title: Image-component
+show-tabs: false
 
+-- site-doc.component-doc: `images`
+package-link: fifthtry.github.io/images
+package-name: fifthtry.github.io/images
+info: `-- images` can be used as resume on your fastn web projects.
 
--- pd.package: Image Component
-name: fifthtry.github.io/images
-
-`images` can be used as part of blog post, section OR chapter etc. To use images on your web package, add below into `FPM.ftd` file:
+`images` can be used as part of blog post, section OR chapter etc. To use images
+on your web package, add below into `FPM.ftd` file:
 
 -- cb.code:
 lang: ftd
 
-\-- fpm.dependency: fifthtry.github.io/images as image
-\-- fpm.auto-import: image
-
-
-
+\-- fastn.dependency: fifthtry.github.io/images as image
+\-- fastn.auto-import: image
 
 -- tf.markdown:
 
 Once you add above lines into your web package, add `image` into your `.ftd` 
 files:
 
-
 -- tf.h3: 1.1: `-- left-hug` with caption and body
 
---- cb.code: Example code for `-- left-hug`
+-- cb.code: Example code for `-- left-hug`
 lang: ftd
 
 \-- image.left-hug: Figure: 1.1 - an lorem ipsum dor se
@@ -48,14 +41,9 @@ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
 ea commodo cons
 
-
-
---- tf.markdown: 
+-- tf.markdown: 
 
 Output of above:
-
-
-
 
 -- left-hug: Figure: 1.1 - an lorem ipsum dor se
 image: $assets.files.image.png
@@ -65,13 +53,9 @@ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
 ea commodo cons
 
-
-
-
-
 -- tf.h3: 1.2: `-- right-hug` with caption and body
 
---- cb.code: Example code for `-- right-hug`
+-- cb.code: Example code for `-- right-hug`
 lang: ftd
 
 \-- image.right-hug: Figure: 1.1 - an lorem ipsum dor se
@@ -82,12 +66,9 @@ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
 ea commodo cons
 
-
-
---- tf.markdown: 
+-- tf.markdown: 
 
 Output of above:
-
 
 -- right-hug: Figure: 1.1 - an lorem ipsum dor se
 image: $assets.files.image.png
@@ -97,6 +78,9 @@ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
 ea commodo cons
 
+-- end: site-doc.component-doc
+
+-- end: site-doc.doc-home
 
 
 
@@ -106,85 +90,93 @@ ea commodo cons
 
 
 
--- ftd.column left-hug:
+
+-- component left-hug:
 caption title:
 ftd.image-src image:
 body body:
-width: fill
 
---- ftd.row:
-if: not $is-mobile
-width: fill
-spacing: 24
-id: hug
+-- ftd.column:
+width: fill-container
 
---- ftd.column:
-width: fill
-align: center
-spacing: 24
+-- ftd.row:
+if: { ftd.device != "mobile" }
+width: fill-container
+spacing.fixed.px: 24
 
---- ftd.text: $title
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text-strong
-width: fill
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 24
 
---- ftd.text:
-text: $body
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-width: fill
+-- ftd.text: $left-hug.title
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+width: fill-container
 
---- container: hug
+-- ftd.text:
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+width: fill-container
 
---- ftd.image:
-src: $image
-width: fill
+$left-hug.body
+
+-- end: ftd.column
+
+-- ftd.image:
+src: $left-hug.image
+width: fill-container
 height: auto
-max-width: percent 50
+max-width.fixed.percent: 50
 
---- container: ftd.main
+-- end: ftd.row
 
---- ftd.column:
-if: $is-mobile
-width: fill
-margin-bottom: 60
-margin-top: $fpm.space.space-3
+-- ftd.column:
+if: { ftd.device == "mobile" }
+width: fill-container
+margin-bottom.px: 60
+margin-top.px: 18
 
---- ftd.row:
-width: fill
-spacing: 24
-scale: 0.5
-margin-left: -50
-id: hug
+-- ftd.row:
+spacing.fixed.px: 24
+margin-left.px: -50
 anchor: parent
-width: 740
-position: center
+width.fixed.px: 740
+align-self: center
 
---- ftd.column:
-width: fill
-align: center
-spacing: 24
-margin-left: 150
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 24
+margin-left.px: 150
 
---- ftd.text: $title
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text-strong
-width: 250
+-- ftd.text: $left-hug.title
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+width.fixed.px: 250
 
---- ftd.text:
-text: $body
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-width: 250
+-- ftd.text:
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+width.fixed.px: 250
 
---- container: hug
+$left-hug.body
 
---- ftd.image:
-src: $image
-width: fill
+-- end: ftd.column
+
+-- ftd.image:
+src: $left-hug.image
+width: fill-container
 height: auto
-max-width: percent 50
-align: center
+max-width.fixed.percent: 50
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: left-hug
 
 
 
@@ -195,83 +187,89 @@ align: center
 
 
 
--- ftd.column right-hug:
+-- component right-hug:
 caption title:
 ftd.image-src image:
 body body:
-width: fill
 
---- ftd.row:
-if: not $is-mobile
-width: fill
-spacing: 24
-id: hug
+-- ftd.column:
+width: fill-container
 
---- ftd.image:
-src: $image
-width: fill
+-- ftd.row:
+if: {ftd.device != "mobile" }
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.image:
+src: $right-hug.image
+width: fill-container
 height: auto
-max-width: percent 50
+max-width.fixed.percent: 50
 
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 24
 
---- container: hug
+-- ftd.text: $right-hug.title
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
 
---- ftd.column:
-width: fill
-align: center
-spacing: 24
+-- ftd.text:
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
 
---- ftd.text: $title
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text-strong
+$right-hug.body
 
---- ftd.text:
-text: $body
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text
+-- end: ftd.column
 
---- container: ftd.main
+-- end: ftd.row
 
---- ftd.column:
-if: $is-mobile
-width: fill
-margin-bottom: 60
-margin-top: $fpm.space.space-5
+-- ftd.column:
+if: {ftd.device == "mobile" }
+width: fill-container
+margin-bottom.px: 60
+margin-top.px: 24
 
---- ftd.row:
-width: fill
-spacing: 24
-scale: 0.5
-margin-left: 20
-id: hug
+-- ftd.row:
+spacing.fixed.px: 24
+margin-left.px: 20
 anchor: parent
-width: 720
-position: center
+width.fixed.px: 720
+align-self: center
 
---- ftd.image:
-src: $image
-width: fill
+-- ftd.image:
+src: $right-hug.image
+width: fill-container
 height: auto
-max-width: percent 50
-align: center
+max-width.fixed.percent: 50
 
---- container: hug
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 24
 
---- ftd.column:
-width: fill
-align: center
-spacing: 24
+-- ftd.text: $right-hug.title
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+width.fixed.px: 250
 
---- ftd.text: $title
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text-strong
-width: 250
+-- ftd.text:
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+width.fixed.px: 250
 
---- ftd.text:
-text: $body
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-width: 250
+$right-hug.body
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: right-hug
 
 
 
