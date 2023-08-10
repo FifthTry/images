@@ -15,6 +15,7 @@
 
 -- fastn.sitemap:
 
-# Home: /index.html
+# Home: index.html
+- Overview: index.html
 - Left Hug Image: left-hug/
 - Right Hug Image: right-hug/

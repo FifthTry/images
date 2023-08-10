@@ -1,9 +1,7 @@
 -- import: fastn-community.github.io/site-doc
--- import: fastn-community.github.io/code-block as cb
 -- import: fastn-community.github.io/typography as tf
 export: markdown,h0,h1,h2,h3
 exposing: markdown, h3
-
 
 -- site-doc.doc-home: Image Component
 site-title: Image-component
@@ -26,14 +24,6 @@ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
 ea commodo cons
 
--- right-hug: Figure: 1.1 - an lorem ipsum dor se
-image: $assets.files.image.png
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-ea commodo cons
-
 -- end: site-doc.output
 
 -- site-doc.header: How to use
@@ -42,30 +32,6 @@ ea commodo cons
 lang: ftd
 
 \-- fastn.dependency: fifthtry.github.io/images
-
--- cb.code: import `images` inside your `.ftd` file
-lang: ftd
-
-\-- import: fifthtry.github.io/images
-
--- cb.code: Copy this code to your `.ftd` file.
-lang: ftd
-
-\-- images.left-hug: Figure: 1.1 - an lorem ipsum dor se
-image: $assets.files.image.png
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-ea commodo cons
-
-\-- images.right-hug: Figure: 1.1 - an lorem ipsum dor se
-image: $assets.files.image.png
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-ea commodo cons
 
 -- end: site-doc.component-doc
 
