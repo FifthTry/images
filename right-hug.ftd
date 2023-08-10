@@ -1,0 +1,69 @@
+-- import: fifthtry.github.io/images
+
+-- site-doc.doc-home: Right Hug Component
+site-title: Image-component
+github-url: https://github.com/fifthtry/images
+current-package: fifthtry.github.io/images
+
+`images` can be used as part of blog post, section OR chapter etc.
+
+-- site-doc.header: Examples
+
+-- site-doc.output:
+colors: $ftd.default-colors
+types: $ftd.default-types
+
+-- images.right-hug: Figure: 1.1 - an lorem ipsum dor se
+image: $assets.files.image.png
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+ea commodo cons
+
+-- end: site-doc.output
+
+-- site-doc.header: How to use
+
+-- cb.code: Add `images` dependency into your FASTN.ftd
+lang: ftd
+
+\-- fastn.dependency: fifthtry.github.io/images
+
+-- cb.code: import `images` inside your `.ftd` file
+lang: ftd
+
+\-- import: fifthtry.github.io/images
+
+-- cb.code: Copy this code to your `.ftd` file.
+lang: ftd
+
+\-- images.right-hug: Figure: 1.1 - an lorem ipsum dor se
+image: $assets.files.image.png
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+ea commodo cons
+
+-- site-doc.header: Properties:
+
+Below are details of all properties of this component.
+
+-- site-doc.component-property: `title`
+type: caption (`required`)
+
+It's used to show `title` of the image sections.
+
+-- site-doc.component-property: `body`
+type: body (`required`)
+
+It's used to show `body` for the image.
+
+-- site-doc.component-property: `image`
+type: ftd.image-src (`required`)
+
+It's used to show `image` that you want to use.
+
+
+-- end: site-doc.doc-home
