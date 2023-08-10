@@ -12,38 +12,11 @@ show-tabs: false
 -- site-doc.component-doc: `images`
 package-link: fifthtry.github.io/images
 package-name: fifthtry.github.io/images
-info: `-- images` can be used as resume on your fastn web projects.
+info: `-- images` can be used as resume on your fastn web projects. 
 
-`images` can be used as part of blog post, section OR chapter etc. To use images
-on your web package, add below into `FPM.ftd` file:
-
--- cb.code:
-lang: ftd
-
-\-- fastn.dependency: fifthtry.github.io/images as image
-\-- fastn.auto-import: image
-
--- tf.markdown:
-
-Once you add above lines into your web package, add `image` into your `.ftd` 
-files:
-
--- tf.h3: 1.1: `-- left-hug` with caption and body
-
--- cb.code: Example code for `-- left-hug`
-lang: ftd
-
-\-- image.left-hug: Figure: 1.1 - an lorem ipsum dor se
-image: $assets.files.image.png
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-ea commodo cons
-
--- tf.markdown: 
-
-Output of above:
+-- site-doc.output:
+colors: $ftd.default-colors
+types: $ftd.default-types
 
 -- left-hug: Figure: 1.1 - an lorem ipsum dor se
 image: $assets.files.image.png
@@ -53,12 +26,7 @@ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
 ea commodo cons
 
--- tf.h3: 1.2: `-- right-hug` with caption and body
-
--- cb.code: Example code for `-- right-hug`
-lang: ftd
-
-\-- image.right-hug: Figure: 1.1 - an lorem ipsum dor se
+-- right-hug: Figure: 1.1 - an lorem ipsum dor se
 image: $assets.files.image.png
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
@@ -66,11 +34,32 @@ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
 ea commodo cons
 
--- tf.markdown: 
+-- end: site-doc.output
 
-Output of above:
+-- site-doc.header: How to use
 
--- right-hug: Figure: 1.1 - an lorem ipsum dor se
+-- cb.code: Add `images` dependency into your FASTN.ftd
+lang: ftd
+
+\-- fastn.dependency: fifthtry.github.io/images
+
+-- cb.code: import `images` inside your `.ftd` file
+lang: ftd
+
+\-- import: fifthtry.github.io/images
+
+-- cb.code: Copy this code to your `.ftd` file.
+lang: ftd
+
+\-- images.left-hug: Figure: 1.1 - an lorem ipsum dor se
+image: $assets.files.image.png
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+ea commodo cons
+
+\-- images.right-hug: Figure: 1.1 - an lorem ipsum dor se
 image: $assets.files.image.png
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
@@ -208,7 +197,6 @@ max-width.fixed.percent: 50
 
 -- ftd.column:
 width: fill-container
-align-content: center
 spacing.fixed.px: 24
 
 -- ftd.text: $right-hug.title

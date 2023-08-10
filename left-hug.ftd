@@ -1,39 +1,19 @@
--- import: fastn-community.github.io/site-doc
--- import: fastn-community.github.io/code-block as cb
--- import: fastn-community.github.io/typography as tf
-export: markdown,h0,h1,h2,h3
-exposing: markdown, h3
-
+-- import: fifthtry.github.io/images
 
 -- site-doc.doc-home: Left Hug Component
 site-title: Image-component
-show-tabs: false
+github-url: https://github.com/fifthtry/images
+current-package: fifthtry.github.io/images
 
--- site-doc.component-doc: `images`
-package-link: fifthtry.github.io/images
-package-name: fifthtry.github.io/images
-info: `-- images` can be used as resume on your fastn web projects.
+`images` can be used as part of blog post, section OR chapter etc.
 
-`images` can be used as part of blog post, section OR chapter etc. To use images
-on your web package, add below into `FPM.ftd` file:
+-- site-doc.header: Examples
 
--- cb.code:
-lang: ftd
+-- site-doc.output:
+colors: $ftd.default-colors
+types: $ftd.default-types
 
-\-- fastn.dependency: fifthtry.github.io/images as image
-\-- fastn.auto-import: image
-
--- tf.markdown:
-
-Once you add above lines into your web package, add `image` into your `.ftd` 
-files:
-
--- tf.h3: 1.1: `-- left-hug` with caption and body
-
--- cb.code: Example code for `-- left-hug`
-lang: ftd
-
-\-- image.left-hug: Figure: 1.1 - an lorem ipsum dor se
+-- images.left-hug: Figure: 1.1 - an lorem ipsum dor se
 image: $assets.files.image.png
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
@@ -41,11 +21,24 @@ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
 ea commodo cons
 
--- tf.markdown: 
+-- end: site-doc.output
 
-Output of above:
+-- site-doc.header: How to use
 
--- images.left-hug: Figure: 1.1 - an lorem ipsum dor se
+-- cb.code: Add `images` dependency into your FASTN.ftd
+lang: ftd
+
+\-- fastn.dependency: fifthtry.github.io/images
+
+-- cb.code: import `images` inside your `.ftd` file
+lang: ftd
+
+\-- import: fifthtry.github.io/images
+
+-- cb.code: Copy this code to your `.ftd` file.
+lang: ftd
+
+\-- images.left-hug: Figure: 1.1 - an lorem ipsum dor se
 image: $assets.files.image.png
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
@@ -60,18 +53,17 @@ Below are details of all properties of this component.
 -- site-doc.component-property: `title`
 type: caption (`required`)
 
-It's used to show `title` of the award sections.
+It's used to show `title` of the image sections.
 
 -- site-doc.component-property: `body`
 type: body (`required`)
 
-It's used to show `body` for the award.
+It's used to show `body` for the image.
 
 -- site-doc.component-property: `image`
 type: ftd.image-src (`required`)
 
-It's used to show `image` from where you have recieved the award.
+It's used to show `image` that you want to use.
 
--- end: site-doc.component-doc
 
 -- end: site-doc.doc-home
